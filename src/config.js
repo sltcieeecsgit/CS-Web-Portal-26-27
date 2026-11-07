@@ -34,3 +34,48 @@ export const teamConfig = {
   logo: "/img/logo.png",
   organization: "IEEE Student Branch SLTC",
 };
+
+export const societySocialLinks = [
+  {
+    name: 'Facebook',
+    url: 'https://web.facebook.com/sltcieeecs?_rdc=1&_rdr#',
+    icon: '/img/icons/facebook.svg',
+    title: 'Follow IEEE CS SLTC on Facebook',
+    hoverBg: 'hover:bg-blue-50/80',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/sltcieeecs/',
+    icon: '/img/icons/linkedin.svg',
+    title: 'Connect with IEEE CS SLTC on LinkedIn',
+    hoverBg: 'hover:bg-sky-50/80',
+  },
+  {
+    name: 'Instagram',
+    url: 'https://www.instagram.com/sltcieeecs',
+    icon: '/img/icons/instagram.svg',
+    title: 'Follow IEEE CS SLTC on Instagram',
+    hoverBg: 'hover:bg-pink-50/80',
+  },
+  {
+    name: 'GitHub',
+    url: 'https://github.com/sltcieeecs',
+    icon: '/img/icons/github.png',
+    title: 'Explore IEEE CS SLTC on GitHub',
+    hoverBg: 'hover:bg-slate-100',
+  },
+  {
+    name: 'Medium',
+    url: 'https://medium.com/@sltcieeecs',
+    icon: '/img/icons/medium.png',
+    title: 'Read IEEE CS SLTC Articles on Medium',
+    hoverBg: 'hover:bg-amber-50/80',
+  },
+  {
+    name: 'Email',
+    url: 'mailto:sltcieeecs@gmail.com',
+    icon: '/img/icons/gmail.svg',
+    title: 'Email IEEE CS SLTC (sltcieeecs@gmail.com)',
+    hoverBg: 'hover:bg-amber-50/80',
+  },
+];

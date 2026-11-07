@@ -6,6 +6,7 @@ import {
 import membersData from '../data/members.json';
 import MemberCard from '../components/MemberCard';
 import QRModal from '../components/QRModal';
+import SocietySocialBar from '../components/SocietySocialBar';
 
 export default function HomePage() {
   const [modalMember, setModalMember] = useState(null);
@@ -52,6 +53,14 @@ export default function HomePage() {
             />
             <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-black/10 pointer-events-none" />
           </div>
+
+          {/* Society Social Media Links Under Hero Banner */}
+          <div className="mt-8 pt-1 flex flex-col items-center justify-center">
+            <p className="text-xs sm:text-sm font-bold text-slate-600 uppercase tracking-wider mb-3.5">
+              Connect With US
+            </p>
+            <SocietySocialBar />
+          </div>
         </div>
       </header>
 
@@ -61,17 +70,13 @@ export default function HomePage() {
           {/* Section 1: Executive Committee */}
           {excomMembers.length > 0 && (
             <section id="excom" className="scroll-mt-24">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 pb-2.5 sm:pb-3 border-b border-amber-300/60">
+              <div className="flex items-center mb-4 sm:mb-6">
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-amber-100 border border-amber-300 text-amber-900 shadow-sm">
                   <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600" />
                   <h2 className="text-xs sm:text-sm font-black uppercase tracking-wider">
                     Executive Committee
                   </h2>
                 </div>
-                <span className="text-[11px] sm:text-xs text-slate-500 font-mono font-medium">
-                  ({excomMembers.length} {excomMembers.length === 1 ? 'member' : 'members'})
-                </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-amber-300 to-transparent" />
               </div>
 
               <div className="member-cards-container">
@@ -90,17 +95,13 @@ export default function HomePage() {
           {/* Section 2: Sub Committee */}
           {subcomMembers.length > 0 && (
             <section id="subcom" className="scroll-mt-24">
-              <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6 pb-2.5 sm:pb-3 border-b border-amber-200/80">
+              <div className="flex items-center mb-4 sm:mb-6">
                 <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl bg-yellow-100 border border-yellow-300 text-yellow-900 shadow-sm">
                   <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600" />
                   <h2 className="text-xs sm:text-sm font-black uppercase tracking-wider">
                     Sub Committee
                   </h2>
                 </div>
-                <span className="text-[11px] sm:text-xs text-slate-500 font-mono font-medium">
-                  ({subcomMembers.length} {subcomMembers.length === 1 ? 'member' : 'members'})
-                </span>
-                <div className="flex-1 h-px bg-gradient-to-r from-yellow-300 to-transparent" />
               </div>
 
               <div className="member-cards-container">

@@ -1,5 +1,6 @@
 import React from 'react';
 import { teamConfig } from '../config';
+import SocietySocialBar from './SocietySocialBar';
 
 export default function Footer() {
   return (
@@ -14,8 +15,13 @@ export default function Footer() {
           </div>
 
           <p className="text-xs sm:text-sm text-slate-500 max-w-lg font-medium mx-auto">
-            Official Digital Profile Directory For Executive Committee and Sub Committee Members.
+            Official Digital Profile Directory.
           </p>
+        </div>
+
+        {/* Society Social Media Links in Footer */}
+        <div className="my-6">
+          <SocietySocialBar iconSize="w-10 h-10 sm:w-11 sm:h-11" />
         </div>
 
         {/* Bottom Copyright: Centered */}
