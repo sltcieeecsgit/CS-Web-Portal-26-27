@@ -33,14 +33,14 @@ export default function MemberCard({ member, onOpenQRModal }) {
   };
 
   return (
-    <div className={`group relative rounded-2xl bg-white/95 border p-3.5 sm:p-5 md:p-6 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 w-full ${
+    <div className={`group relative rounded-2xl bg-white/95 border p-2.5 sm:p-5 md:p-6 flex flex-col justify-between transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1 w-full h-full ${
       isExcom
         ? 'border-amber-200 hover:border-amber-400 hover:shadow-amber-400/20'
         : 'border-yellow-200 hover:border-yellow-400 hover:shadow-yellow-400/20'
     }`}>
       <div>
         {/* Top Header: Photo & Quick QR Preview */}
-        <div className="flex items-start justify-between gap-2 sm:gap-4 mb-2.5 sm:mb-4">
+        <div className="flex items-start justify-between gap-1.5 sm:gap-4 mb-2 sm:mb-4">
           <Link to={`/members/${member.slug}`} className="block relative">
             <MemberAvatar
               member={member}
@@ -56,17 +56,17 @@ export default function MemberCard({ member, onOpenQRModal }) {
           {/* Quick QR button */}
           <button
             onClick={() => onOpenQRModal(member)}
-            className="p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 hover:text-amber-900 border border-amber-200 transition-all hover:scale-105 active:scale-95 shadow-sm"
+            className="p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 hover:text-amber-900 border border-amber-200 transition-all hover:scale-105 active:scale-95 shadow-sm shrink-0"
             title="Preview QR Code"
             aria-label="Preview QR code"
           >
-            <QrCode className="w-4 h-4 sm:w-5 sm:h-5" />
+            <QrCode className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
           </button>
         </div>
 
         {/* Member Name & Position */}
         <div className="space-y-0.5 sm:space-y-1 mb-2">
-          <h3 className="text-xs sm:text-base md:text-lg font-black text-slate-900 tracking-tight leading-snug group-hover:text-amber-600 transition-colors line-clamp-2">
+          <h3 className="text-xs sm:text-base md:text-lg font-black text-slate-900 tracking-tight leading-snug group-hover:text-amber-600 transition-colors line-clamp-2 min-h-[2.4em] sm:min-h-0 flex items-center">
             <Link to={`/members/${member.slug}`}>
               {member.fullName}
             </Link>
@@ -79,10 +79,10 @@ export default function MemberCard({ member, onOpenQRModal }) {
       </div>
 
       {/* Action Buttons: View Profile & Download QR */}
-      <div className="mt-3 sm:mt-5 pt-2.5 sm:pt-4 border-t border-amber-100 flex items-center gap-1.5 sm:gap-2">
+      <div className="mt-2.5 sm:mt-5 pt-2 sm:pt-4 border-t border-amber-100 flex items-center gap-1 sm:gap-2">
         <Link
           to={`/members/${member.slug}`}
-          className="flex-1 flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-black bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-slate-950 shadow-sm shadow-amber-400/20 transition-all hover:scale-[1.02] active:scale-[0.98]"
+          className="flex-1 min-w-0 flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-black bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-slate-950 shadow-sm shadow-amber-400/20 transition-all hover:scale-[1.02] active:scale-[0.98] whitespace-nowrap"
         >
           <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
           <span className="truncate">View Profile</span>
@@ -92,7 +92,7 @@ export default function MemberCard({ member, onOpenQRModal }) {
         <button
           onClick={handleDownloadPNG}
           disabled={downloading}
-          className="flex items-center justify-center gap-1 sm:gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold bg-white hover:bg-amber-50 text-slate-800 border border-amber-200 hover:border-amber-400 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 shadow-sm shrink-0"
+          className="shrink-0 flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-bold bg-white hover:bg-amber-50 text-slate-800 border border-amber-200 hover:border-amber-400 transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-60 shadow-sm whitespace-nowrap"
           title="Download Member QR Code (PNG)"
         >
           {downloadSuccess ? (
